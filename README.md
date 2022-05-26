@@ -1,54 +1,30 @@
-# brief9-wordpress-pluging-contact-form
+Step 1 – Storing the Plugin
 
-Unzip the package in an empty directory and upload everything.
-Open wp-admin/install.php in your browser. It will take you through the process to set up a wp-config.php file with your database connection details.
-If for some reason this doesn’t work, don’t worry. It doesn’t work on all web hosts. Open up wp-config-sample.php with a text editor like WordPad or similar and fill in your database connection details.
-Save the file as wp-config.php and upload it.
-Open wp-admin/install.php in your browser.
-Once the configuration file is set up, the installer will set up the tables needed for your site. If there is an error, double check your wp-config.php file, and try again. If it fails again, please go to the WordPress support forums with as much data as you can gather.
-If you did not enter a password, note the password given to you. If you did not provide a username, it will be admin.
-The installer should then send you to the login page. Sign in with the username and password you chose during the installation. If a password was generated for you, you can then click on “Profile” to change the password.
-Updating
-Using the Automatic Updater
-Open wp-admin/update-core.php in your browser and follow the instructions.
-You wanted more, perhaps? That’s it!
-Updating Manually
-Before you update anything, make sure you have backup copies of any files you may have modified such as index.php.
-Delete your old WordPress files, saving ones you’ve modified.
-Upload the new files.
-Point your browser to /wp-admin/upgrade.php.
-Migrating from other systems
-WordPress can import from a number of systems. First you need to get WordPress installed and working as described above, before using our import tools.
+The first step to creating a new plugin is to make a folder for its files. The folder’s name should be unique and descriptive. Check the other plugin folders’ names within /wp-content/![Screenshot 2022-05-26 151934](https://user-images.githubusercontent.com/93929557/170508884-71dc488d-5cee-48db-83c9-076ff5cadfa6.png)
+![Screenshot 2022-05-26 151952](https://user-images.githubusercontent.com/93929557/170508889-77276652-7e62-476b-bae0-8b771e6fafdd.png)
+![Screenshot 2022-05-26 152025](https://use![Screenshot 2022-05-26 151835](https://user-images.githubusercontent.com/93929557/170508908-2adc24d8-507b-45fd-9858-db25922cc1be.png)
+r-images.githubusercontent.com/93929557/170508890-8bf16228-ec11-4fa7-bf1b-6782488ec6f1.png)
+plugins/ to make sure that the new name isn’t in use already.
 
-System Requirements
-PHP version 5.6.20 or greater.
-MySQL version 5.0 or greater.
-Recommendations
-PHP version 7.4 or greater.
-MySQL version 5.7 or greater OR MariaDB version 10.2 or greater.
-The mod_rewrite Apache module.
-HTTPS support.
-A link to wordpress.org on your site.
-Online Resources
-If you have any questions that aren’t addressed in this document, please take advantage of WordPress’ numerous online resources:
+Use an FTP client to connect to your hosting account to facilitate the file upload process. Navigate to wp-content -> plugins from the main WordPress directory. Then, create a new folder named my-first-plugin in the plugins folder.
 
-The WordPress Codex
-The Codex is the encyclopedia of all things WordPress. It is the most comprehensive source of information for WordPress available.
-The WordPress Blog
-This is where you’ll find the latest updates and news related to WordPress. Recent WordPress news appears in your administrative dashboard by default.
-WordPress Planet
-The WordPress Planet is a news aggregator that brings together posts from WordPress blogs around the web.
-WordPress Support Forums
-If you’ve looked everywhere and still can’t find an answer, the support forums are very active and have a large community ready to help. To help them help you be sure to use a descriptive thread title and describe your question in as much detail as possible.
-WordPress IRC (Internet Relay Chat) Channel
-There is an online chat channel that is used for discussion among people who use WordPress and occasionally support topics. The above wiki page should point you in the right direction. (irc.libera.chat #wordpress)
-Final Notes
-If you have any suggestions, ideas, or comments, or if you (gasp!) found a bug, join us in the Support Forums.
-WordPress has a robust plugin API (Application Programming Interface) that makes extending the code easy. If you are a developer interested in utilizing this, see the Plugin Developer Handbook. You shouldn’t modify any of the core code.
-Share the Love
-WordPress has no multi-million dollar marketing campaign or celebrity sponsors, but we do have something even better—you. If you enjoy WordPress please consider telling a friend, setting it up for someone less knowledgeable than yourself, or writing the author of a media article that overlooks us.
+Step 2 – Creating the First File
 
-WordPress is the official continuation of b2/cafélog, which came from Michel V. The work has been continued by the WordPress developers. If you would like to support WordPress, please consider donating.
+The main plugin file will contain the information WordPress requires to display your plugin in the plugin list where you’ll be able to activate it.
 
-License
-WordPress is free software, and is released under the terms of the GPL (GNU General Public License) version 2 or (at your option) any later version. See license.txt.
+Create a new PHP file called my-first-plugin.php in the folder you made earlier. This main plugin file will contain header comments with additional information for WordPress to read or display.
+You can refer to this PHP manual to understand why the closing tag ?> isn’t necessary here.
+
+Save the file. Then, navigate to the Plugins section of your WordPress dashboard. If WordPress has read the new file correctly, you’ll see My First Plugin on the list
+
+
+Step 3 – Writing the Plugin Functions
+Before we begin writing the functions for the plugin, it is highly recommended to give all files, functions, and variables a unique prefix in their name to avoid any conflicts with other plugins. In our example, we’ll be using the prefix mfp, which is short for My First Plugin.
+
+Create a new folder named Includes in the plugin’s main directory. We’ll use it to store supporting files used by the main file. In this folder, create a PHP file and name it mfp-functions.php. Give it the opening <?php tag on the first line.
+
+This new file will contain all of your plugin’s functions.
+
+We’ll have to include mfp-functions.php in the main plugin file to allow the other plugin files to use the functions it defines. Use require_once to ensure the plugin only works if the functions file is present.
+
+Edit my-first-plugin.php as shown below. Then, save it and upload the file once again, overwriting the previous version when asked.
