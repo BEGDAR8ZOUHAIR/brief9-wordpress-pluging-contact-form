@@ -28,3 +28,9 @@ This new file will contain all of your plugin’s functions.
 We’ll have to include mfp-functions.php in the main plugin file to allow the other plugin files to use the functions it defines. Use require_once to ensure the plugin only works if the functions file is present.
 
 Edit my-first-plugin.php as shown below. Then, save it and upload the file once again, overwriting the previous version when asked.
+![Screenshot 2022-05-26 151835](https://user-images.githubusercontent.com/93929557/170509265-87826124-4bd7-4c46-a07b-47c287e85d31.png)
+
+
+
+
+
