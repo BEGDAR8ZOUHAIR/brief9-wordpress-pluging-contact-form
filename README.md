@@ -3,7 +3,7 @@ Step 1 – Storing the Plugin
 The first step to creating a new plugin is to make a folder for its files. The folder’s name should be unique and descriptive. Check the other plugin folders’ names within /wp-content/![Screenshot 2022-05-26 151934](https://user-images.githubusercontent.com/93929557/170508884-71dc488d-5cee-48db-83c9-076ff5cadfa6.png)
 ![Screenshot 2022-05-26 151952](https://user-images.githubusercontent.com/93929557/170508889-77276652-7e62-476b-bae0-8b771e6fafdd.png)
 ![Screenshot 2022-05-26 152025](https://use![Screenshot 2022-05-26 151835](https://user-images.githubusercontent.com/93929557/170508908-2adc24d8-507b-45fd-9858-db25922cc1be.png)
-r-images.githubusercontent.com/93929557/170508890-8bf16228-ec11-4fa7-bf1b-6782488ec6f1.png)
+
 plugins/ to make sure that the new name isn’t in use already.
 
 Use an FTP client to connect to your hosting account to facilitate the file upload process. Navigate to wp-content -> plugins from the main WordPress directory. Then, create a new folder named my-first-plugin in the plugins folder.
